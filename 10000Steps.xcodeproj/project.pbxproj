@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED76D8D11E749177009871A1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED76D8CF1E749177009871A1 /* Interface.storyboard */; };
+		ED76D8D31E749177009871A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED76D8D21E749177009871A1 /* Assets.xcassets */; };
+		ED76D8DA1E749177009871A1 /* 10000Steps WatchkitApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ED76D8D91E749177009871A1 /* 10000Steps WatchkitApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ED76D8E11E749177009871A1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76D8E01E749177009871A1 /* InterfaceController.swift */; };
+		ED76D8E31E749177009871A1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76D8E21E749177009871A1 /* ExtensionDelegate.swift */; };
+		ED76D8E51E749177009871A1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76D8E41E749177009871A1 /* NotificationController.swift */; };
+		ED76D8E71E749177009871A1 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76D8E61E749177009871A1 /* ComplicationController.swift */; };
+		ED76D8E91E749177009871A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED76D8E81E749177009871A1 /* Assets.xcassets */; };
+		ED76D8ED1E749177009871A1 /* 10000Steps WatchkitApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = ED76D8CD1E749177009871A1 /* 10000Steps WatchkitApp.app */; };
 		EDBC11A11E737B2500AEA487 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC11A01E737B2500AEA487 /* AppDelegate.swift */; };
 		EDBC11A31E737B2500AEA487 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC11A21E737B2500AEA487 /* ViewController.swift */; };
 		EDBC11A61E737B2500AEA487 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBC11A41E737B2500AEA487 /* Main.storyboard */; };
@@ -14,7 +23,61 @@
 		EDBC11AB1E737B2500AEA487 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDBC11A91E737B2500AEA487 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		ED76D8DB1E749177009871A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDBC11951E737B2500AEA487 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED76D8D81E749177009871A1;
+			remoteInfo = "10000Steps WatchkitApp Extension";
+		};
+		ED76D8EB1E749177009871A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDBC11951E737B2500AEA487 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED76D8CC1E749177009871A1;
+			remoteInfo = "10000Steps WatchkitApp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED76D8F11E749177009871A1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ED76D8DA1E749177009871A1 /* 10000Steps WatchkitApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED76D8F51E749177009871A1 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				ED76D8ED1E749177009871A1 /* 10000Steps WatchkitApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		ED76D8CD1E749177009871A1 /* 10000Steps WatchkitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "10000Steps WatchkitApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED76D8D01E749177009871A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		ED76D8D21E749177009871A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED76D8D41E749177009871A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED76D8D91E749177009871A1 /* 10000Steps WatchkitApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "10000Steps WatchkitApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED76D8DF1E749177009871A1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		ED76D8E01E749177009871A1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		ED76D8E21E749177009871A1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		ED76D8E41E749177009871A1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		ED76D8E61E749177009871A1 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		ED76D8E81E749177009871A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED76D8EA1E749177009871A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDBC119D1E737B2500AEA487 /* 10000Steps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 10000Steps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBC11A01E737B2500AEA487 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDBC11A21E737B2500AEA487 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +88,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ED76D8D61E749177009871A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDBC119A1E737B2500AEA487 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -35,10 +105,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED76D8CE1E749177009871A1 /* 10000Steps WatchkitApp */ = {
+			isa = PBXGroup;
+			children = (
+				ED76D8CF1E749177009871A1 /* Interface.storyboard */,
+				ED76D8D21E749177009871A1 /* Assets.xcassets */,
+				ED76D8D41E749177009871A1 /* Info.plist */,
+			);
+			path = "10000Steps WatchkitApp";
+			sourceTree = "<group>";
+		};
+		ED76D8DD1E749177009871A1 /* 10000Steps WatchkitApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ED76D8E01E749177009871A1 /* InterfaceController.swift */,
+				ED76D8E21E749177009871A1 /* ExtensionDelegate.swift */,
+				ED76D8E41E749177009871A1 /* NotificationController.swift */,
+				ED76D8E61E749177009871A1 /* ComplicationController.swift */,
+				ED76D8E81E749177009871A1 /* Assets.xcassets */,
+				ED76D8EA1E749177009871A1 /* Info.plist */,
+				ED76D8DE1E749177009871A1 /* Supporting Files */,
+			);
+			path = "10000Steps WatchkitApp Extension";
+			sourceTree = "<group>";
+		};
+		ED76D8DE1E749177009871A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED76D8DF1E749177009871A1 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		EDBC11941E737B2500AEA487 = {
 			isa = PBXGroup;
 			children = (
 				EDBC119F1E737B2500AEA487 /* 10000Steps */,
+				ED76D8CE1E749177009871A1 /* 10000Steps WatchkitApp */,
+				ED76D8DD1E749177009871A1 /* 10000Steps WatchkitApp Extension */,
 				EDBC119E1E737B2500AEA487 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				EDBC119D1E737B2500AEA487 /* 10000Steps.app */,
+				ED76D8CD1E749177009871A1 /* 10000Steps WatchkitApp.app */,
+				ED76D8D91E749177009871A1 /* 10000Steps WatchkitApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +173,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		ED76D8CC1E749177009871A1 /* 10000Steps WatchkitApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED76D8F21E749177009871A1 /* Build configuration list for PBXNativeTarget "10000Steps WatchkitApp" */;
+			buildPhases = (
+				ED76D8CB1E749177009871A1 /* Resources */,
+				ED76D8F11E749177009871A1 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED76D8DC1E749177009871A1 /* PBXTargetDependency */,
+			);
+			name = "10000Steps WatchkitApp";
+			productName = "10000Steps WatchkitApp";
+			productReference = ED76D8CD1E749177009871A1 /* 10000Steps WatchkitApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		ED76D8D81E749177009871A1 /* 10000Steps WatchkitApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED76D8EE1E749177009871A1 /* Build configuration list for PBXNativeTarget "10000Steps WatchkitApp Extension" */;
+			buildPhases = (
+				ED76D8D51E749177009871A1 /* Sources */,
+				ED76D8D61E749177009871A1 /* Frameworks */,
+				ED76D8D71E749177009871A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "10000Steps WatchkitApp Extension";
+			productName = "10000Steps WatchkitApp Extension";
+			productReference = ED76D8D91E749177009871A1 /* 10000Steps WatchkitApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		EDBC119C1E737B2500AEA487 /* 10000Steps */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDBC11AF1E737B2500AEA487 /* Build configuration list for PBXNativeTarget "10000Steps" */;
@@ -74,10 +214,12 @@
 				EDBC11991E737B2500AEA487 /* Sources */,
 				EDBC119A1E737B2500AEA487 /* Frameworks */,
 				EDBC119B1E737B2500AEA487 /* Resources */,
+				ED76D8F51E749177009871A1 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ED76D8EC1E749177009871A1 /* PBXTargetDependency */,
 			);
 			name = 10000Steps;
 			productName = 10000Steps;
@@ -94,6 +236,16 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Erica Correa";
 				TargetAttributes = {
+					ED76D8CC1E749177009871A1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N4Z4DHHUE9;
+						ProvisioningStyle = Automatic;
+					};
+					ED76D8D81E749177009871A1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N4Z4DHHUE9;
+						ProvisioningStyle = Automatic;
+					};
 					EDBC119C1E737B2500AEA487 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = N4Z4DHHUE9;
@@ -115,11 +267,30 @@
 			projectRoot = "";
 			targets = (
 				EDBC119C1E737B2500AEA487 /* 10000Steps */,
+				ED76D8CC1E749177009871A1 /* 10000Steps WatchkitApp */,
+				ED76D8D81E749177009871A1 /* 10000Steps WatchkitApp Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ED76D8CB1E749177009871A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED76D8D31E749177009871A1 /* Assets.xcassets in Resources */,
+				ED76D8D11E749177009871A1 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED76D8D71E749177009871A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED76D8E91E749177009871A1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDBC119B1E737B2500AEA487 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +304,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ED76D8D51E749177009871A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED76D8E51E749177009871A1 /* NotificationController.swift in Sources */,
+				ED76D8E71E749177009871A1 /* ComplicationController.swift in Sources */,
+				ED76D8E31E749177009871A1 /* ExtensionDelegate.swift in Sources */,
+				ED76D8E11E749177009871A1 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EDBC11991E737B2500AEA487 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,7 +326,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		ED76D8DC1E749177009871A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED76D8D81E749177009871A1 /* 10000Steps WatchkitApp Extension */;
+			targetProxy = ED76D8DB1E749177009871A1 /* PBXContainerItemProxy */;
+		};
+		ED76D8EC1E749177009871A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED76D8CC1E749177009871A1 /* 10000Steps WatchkitApp */;
+			targetProxy = ED76D8EB1E749177009871A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		ED76D8CF1E749177009871A1 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED76D8D01E749177009871A1 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		EDBC11A41E737B2500AEA487 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -164,6 +367,76 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ED76D8EF1E749177009871A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = N4Z4DHHUE9;
+				INFOPLIST_FILE = "10000Steps WatchkitApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Erica-Correa.-0000Steps.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		ED76D8F01E749177009871A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = N4Z4DHHUE9;
+				INFOPLIST_FILE = "10000Steps WatchkitApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Erica-Correa.-0000Steps.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		ED76D8F31E749177009871A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N4Z4DHHUE9;
+				IBSC_MODULE = _0000Steps_WatchkitApp_Extension;
+				INFOPLIST_FILE = "10000Steps WatchkitApp/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Erica-Correa.-0000Steps.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		ED76D8F41E749177009871A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N4Z4DHHUE9;
+				IBSC_MODULE = _0000Steps_WatchkitApp_Extension;
+				INFOPLIST_FILE = "10000Steps WatchkitApp/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Erica-Correa.-0000Steps.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
 		EDBC11AD1E737B2500AEA487 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -286,6 +559,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ED76D8EE1E749177009871A1 /* Build configuration list for PBXNativeTarget "10000Steps WatchkitApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED76D8EF1E749177009871A1 /* Debug */,
+				ED76D8F01E749177009871A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED76D8F21E749177009871A1 /* Build configuration list for PBXNativeTarget "10000Steps WatchkitApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED76D8F31E749177009871A1 /* Debug */,
+				ED76D8F41E749177009871A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EDBC11981E737B2500AEA487 /* Build configuration list for PBXProject "10000Steps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -302,6 +593,7 @@
 				EDBC11B11E737B2500AEA487 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
