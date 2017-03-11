@@ -8,14 +8,36 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var numberOfStepsLabel: WKInterfaceLabel!
     @IBOutlet var andCountingLabel: WKInterfaceLabel!
 
-    var numberOfSteps = 10000
+    var steps = 9000
     var hasReached10000 = false
     let waitingGifs = [UIImage]()
     let celebratingGifs = [UIImage]()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        headerLabel.setText("\(numberOfSteps) Steps")
+
+        steps > 9999 ? setUpCelebratingView() : setUpWaitingView()
+    }
+
+    func setUpWaitingView() {
+        numberOfStepsLabel.setHidden(true)
+        andCountingLabel.setHidden(true)
+
+        let formattedSteps = formatNumber(of: steps)
+        headerLabel.setText("\(formattedSteps) Steps")
+    }
+
+    func setUpCelebratingView() {
+        numberOfStepsLabel.setHidden(false)
+        andCountingLabel.setHidden(false)
+
+        headerLabel.setText("YOU DID IT!")
+        let formattedSteps = formatNumber(of: steps)
+        numberOfStepsLabel.setText("\(formattedSteps) Steps")
+    }
+
+    func formatNumber(of steps: Int) -> String {
+        return String()
     }
 
     override func willActivate() {
