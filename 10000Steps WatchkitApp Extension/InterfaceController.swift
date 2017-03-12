@@ -37,7 +37,12 @@ class InterfaceController: WKInterfaceController {
     }
 
     func formatNumber(of steps: Int) -> String {
-        return String()
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+
+        guard let formattedNumber = numberFormatter.string(from: NSNumber(value: steps)) else { return String() }
+
+        return formattedNumber
     }
 
     override func willActivate() {
