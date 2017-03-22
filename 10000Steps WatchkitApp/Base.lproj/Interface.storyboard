@@ -17,7 +17,7 @@
                         <label alignment="center" text="# Steps" id="wxB-LR-qPA">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
-                        <imageView width="155" height="100" alignment="left" image="waiting1frame" contentMode="scaleAspectFit" id="GtF-gq-hPI"/>
+                        <imageView width="155" height="100" alignment="left" contentMode="scaleAspectFit" id="GtF-gq-hPI"/>
                         <label alignment="center" text="# Steps" id="sdr-fz-uX3"/>
                         <label alignment="center" text="and Counting!" id="bwi-Id-yj6"/>
                     </items>
