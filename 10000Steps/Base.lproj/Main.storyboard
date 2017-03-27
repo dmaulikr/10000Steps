@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,19 +23,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k23-HK-bBH">
-                                <rect key="frame" x="166" y="247" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RVz-Ny-7fY">
+                                <rect key="frame" x="41" y="135" width="293" height="220"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RVz-Ny-7fY" secondAttribute="height" multiplier="4:3" id="kLr-fs-mU8"/>
+                                </constraints>
+                                <string key="text">Welcome to App Name! 
+
+In order to use this app you need to authorize us to access your step data from HealthKit. Please press the button below to grant us permission.</string>
+                                <color key="textColor" red="0.94547526039999996" green="0.94973415800000005" blue="0.94609917529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of Steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k23-HK-bBH">
+                                <rect key="frame" x="112.5" y="67.5" width="149.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpS-C3-ZLh">
+                                <rect key="frame" x="123" y="303.5" width="129" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIF-Dk-NIc">
+                                <rect key="frame" x="40.5" y="385" width="293" height="36"/>
+                                <color key="backgroundColor" red="0.94547526039999996" green="0.94973415800000005" blue="0.94609917529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Autorize HealthKit">
+                                    <color key="titleColor" red="0.87843137250000003" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapAuthorizeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7wu-Tj-b2U"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and Counting!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb2-5U-l6h">
+                                <rect key="frame" x="105" y="400" width="165" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <color key="textColor" red="0.94547526039999996" green="0.94973415800000005" blue="0.94609917529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="1hj-5p-3Mg">
+                                <rect key="frame" x="137" y="453" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="TXP-Ln-MrS"/>
+                                    <constraint firstAttribute="height" constant="100" id="p1H-bN-Ql5"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vcQ-DR-F0a" customClass="FLAnimatedImageView">
+                                <rect key="frame" x="67" y="135" width="240" height="154"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vcQ-DR-F0a" secondAttribute="height" multiplier="120:77" id="9Zf-m0-qWz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RVz-Ny-7fY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="4Cx-Wq-wdh"/>
+                            <constraint firstItem="rpS-C3-ZLh" firstAttribute="top" secondItem="vcQ-DR-F0a" secondAttribute="bottom" constant="14.5" id="76W-x2-ZdG"/>
+                            <constraint firstItem="vcQ-DR-F0a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B7q-lI-frf"/>
+                            <constraint firstItem="bb2-5U-l6h" firstAttribute="top" secondItem="rpS-C3-ZLh" secondAttribute="bottom" constant="36.5" id="MBc-0a-1gP"/>
+                            <constraint firstItem="k23-HK-bBH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ovh-tv-7UA"/>
+                            <constraint firstItem="rpS-C3-ZLh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SsN-3t-84D"/>
+                            <constraint firstItem="bb2-5U-l6h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VWs-Ot-6WV"/>
+                            <constraint firstItem="CIF-Dk-NIc" firstAttribute="width" secondItem="RVz-Ny-7fY" secondAttribute="width" id="Vbs-TL-vIB"/>
+                            <constraint firstItem="rpS-C3-ZLh" firstAttribute="top" secondItem="k23-HK-bBH" secondAttribute="bottom" constant="200" id="VxE-ZH-N6Y"/>
+                            <constraint firstItem="1hj-5p-3Mg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z3t-wp-xlG"/>
+                            <constraint firstItem="vcQ-DR-F0a" firstAttribute="top" secondItem="k23-HK-bBH" secondAttribute="bottom" constant="31.5" id="a5a-TP-h6q"/>
+                            <constraint firstItem="CIF-Dk-NIc" firstAttribute="top" secondItem="RVz-Ny-7fY" secondAttribute="bottom" constant="30" id="fNW-zP-mmE"/>
+                            <constraint firstItem="rpS-C3-ZLh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="i9b-6g-gMa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RVz-Ny-7fY" secondAttribute="trailing" constant="25" id="l2w-Ki-F5k"/>
+                            <constraint firstItem="RVz-Ny-7fY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="115" id="qY0-Eb-MMY"/>
+                            <constraint firstItem="1hj-5p-3Mg" firstAttribute="top" secondItem="CIF-Dk-NIc" secondAttribute="bottom" constant="32" id="rFE-Lk-mjN"/>
+                            <constraint firstItem="CIF-Dk-NIc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uV7-ck-THV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="andCountingLabel" destination="bb2-5U-l6h" id="ug8-cX-352"/>
+                        <outlet property="authorizeButton" destination="CIF-Dk-NIc" id="xBn-Zh-7RC"/>
+                        <outlet property="gifImageView" destination="vcQ-DR-F0a" id="Ksl-Cu-Bo8"/>
+                        <outlet property="headerLabel" destination="k23-HK-bBH" id="bxj-uH-sC3"/>
+                        <outlet property="numberOfStepsLabel" destination="rpS-C3-ZLh" id="qNe-iY-4bY"/>
+                        <outlet property="welcomeTextView" destination="RVz-Ny-7fY" id="b7C-Bk-fG7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="512" height="512"/>
+    </resources>
 </document>
