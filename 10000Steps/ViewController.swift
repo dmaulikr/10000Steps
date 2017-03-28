@@ -10,6 +10,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var andCountingLabel: UILabel!
     @IBOutlet weak var gifImageView: FLAnimatedImageView!
 
+    @IBOutlet weak var redBackgroundView: UIView!
+    @IBOutlet weak var darkGrayBackgroundView: UIView!
+
     let waitingImageTitles = [
         "waiting1",
         "waiting2",
@@ -81,6 +84,8 @@ class ViewController: UIViewController {
         headerLabel.isHidden = true
         numberOfStepsLabel.isHidden = true
         andCountingLabel.isHidden = true
+        redBackgroundView.isHidden = true
+        darkGrayBackgroundView.isHidden = true
     }
 
     func setUpWaitingView() {
@@ -91,10 +96,10 @@ class ViewController: UIViewController {
         numberOfStepsLabel.isHidden = false
         andCountingLabel.isHidden = false
 
-        headerLabel.text = "Try to reach 10,000"
+        headerLabel.text = "Try to Reach 10,000!"
         let formattedSteps = formatNumber(of: steps)
         numberOfStepsLabel.text = "\(formattedSteps) Steps"
-        andCountingLabel.text = "Keep steppin!"
+        andCountingLabel.text = "Keep Steppin!"
     }
 
     func setUpCelebratingView() {
