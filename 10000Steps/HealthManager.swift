@@ -5,13 +5,13 @@ class HealthManager {
     var healthStore: HKHealthStore = HKHealthStore()
     var numberOfSteps = Double()
 
-    func authorizeHealthKit() {
+    func authorizeHealthKit(completion: @escaping (Bool) -> Void) {
         if HKHealthStore.isHealthDataAvailable() {
             let steps = NSSet(object: HKQuantityType.quantityType(
                 forIdentifier: HKQuantityTypeIdentifier.stepCount)!)
 
             healthStore.requestAuthorization(toShare: nil, read: (steps as! Set<HKObjectType>)) { (success, error) -> Void in
-                if success { print(success) } else { print(error!) }
+                if success { completion(true) } else { completion(false) }
             }
         } else { print("HealthKit is not available on this Device") }
     }
