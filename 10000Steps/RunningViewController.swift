@@ -66,15 +66,13 @@ class RunningViewController: UIViewController {
 
             DispatchQueue.main.async(execute: { () -> Void in
                 self.steps = Int(steps)
-                if self.steps >= 10000 { self.hasReached10000 = true }
+                if self.steps >= 1000 { self.hasReached10000 = true }
                 else { self.hasReached10000 = false }
 
                 self.setSteps()
 
-                var headerText = ""
-                if self.hasReached10000 { headerText = "YOU DID IT!" }
-                else { headerText = "Try to Reach 10,000!" }
-                self.headerLabel.text = headerText
+                if self.hasReached10000 { self.setSuccessView() }
+                else { self.headerLabel.text = "Try to reach 10,000!" }
 
                 self.getGifImage()
             })
@@ -103,5 +101,14 @@ class RunningViewController: UIViewController {
         guard let formattedNumber = numberFormatter.string(from: NSNumber(value: steps)) else { return String() }
 
         return formattedNumber
+    }
+
+    func setSuccessView() {
+        headerLabel.text = "YOU DID IT!"
+        //TODO: Animate this label a little bit
+
+        let color = UIColor(red: 72/255, green: 129/255, blue: 141/255, alpha: 1.0)
+        headerLabel.textColor = color
+        stepCountLabel.textColor = color
     }
 }
