@@ -66,7 +66,7 @@ class RunningViewController: UIViewController {
 
             DispatchQueue.main.async(execute: { () -> Void in
                 self.steps = Int(steps)
-                if self.steps >= 1000 { self.hasReached10000 = true }
+                if self.steps >= 10000 { self.hasReached10000 = true }
                 else { self.hasReached10000 = false }
 
                 self.setSteps()
