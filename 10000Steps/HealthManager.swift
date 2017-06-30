@@ -43,6 +43,9 @@ class HealthManager {
                         self.numberOfSteps = steps
                         print("Steps = \(steps)")
                         completion(self.numberOfSteps, nil)
+                    } else {
+                        self.numberOfSteps = 0
+                        completion(self.numberOfSteps, nil)
                     }
                 }
             }

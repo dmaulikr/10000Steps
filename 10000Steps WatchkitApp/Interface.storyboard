@@ -16,25 +16,30 @@
                     <items>
                         <label alignment="center" text="# Steps" id="wxB-LR-qPA">
                             <color key="textColor" red="0.77647058820000003" green="0.27058823529999998" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                         </label>
-                        <imageView width="155" height="100" alignment="left" contentMode="scaleAspectFit" id="GtF-gq-hPI"/>
+                        <imageView width="155" height="105" alignment="left" contentMode="scaleAspectFit" id="GtF-gq-hPI"/>
                         <label alignment="center" text="# Steps" id="sdr-fz-uX3">
                             <color key="textColor" red="0.77647058820000003" green="0.27058823529999998" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </label>
-                        <label alignment="center" text="and Counting!" id="bwi-Id-yj6">
+                        <label alignment="center" text="and counting!" id="RZm-UH-Sxn">
                             <color key="textColor" red="0.77647058820000003" green="0.27058823529999998" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                         </label>
+                        <label alignment="left" text="Powered by Giphy" id="wII-0v-QfU">
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <imageView width="35" height="10" alignment="left" image="giphy_logo" id="yFQ-Kl-lKS"/>
                     </items>
                     <connections>
-                        <outlet property="andCountingLabel" destination="bwi-Id-yj6" id="O9Q-qL-Vel"/>
                         <outlet property="gifImage" destination="GtF-gq-hPI" id="alc-0H-SP5"/>
                         <outlet property="headerLabel" destination="wxB-LR-qPA" id="EuU-X1-mHE"/>
                         <outlet property="numberOfStepsLabel" destination="sdr-fz-uX3" id="OA4-Q3-gUF"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="15.692307692307693" y="-105.05128205128206"/>
+            <point key="canvasLocation" x="15.692307692307693" y="-100.25641025641026"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

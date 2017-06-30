@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0D20251F06DE0E00FDA92E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0D20241F06DE0E00FDA92E /* Interface.storyboard */; };
 		ED4D9E401E9820B6005A5B46 /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4D9E3F1E9820B6005A5B46 /* PermissionViewController.swift */; };
 		ED4D9E421E9820C6005A5B46 /* RunningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4D9E411E9820C6005A5B46 /* RunningViewController.swift */; };
-		ED76D8D11E749177009871A1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED76D8CF1E749177009871A1 /* Interface.storyboard */; };
 		ED76D8D31E749177009871A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED76D8D21E749177009871A1 /* Assets.xcassets */; };
 		ED76D8DA1E749177009871A1 /* 10000Steps WatchkitApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ED76D8D91E749177009871A1 /* 10000Steps WatchkitApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ED76D8E11E749177009871A1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76D8E01E749177009871A1 /* InterfaceController.swift */; };
@@ -92,10 +92,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ED0D20241F06DE0E00FDA92E /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		ED4D9E3F1E9820B6005A5B46 /* PermissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
 		ED4D9E411E9820C6005A5B46 /* RunningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningViewController.swift; sourceTree = "<group>"; };
 		ED76D8CD1E749177009871A1 /* 10000Steps WatchkitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "10000Steps WatchkitApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED76D8D01E749177009871A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		ED76D8D21E749177009871A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED76D8D41E749177009871A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED76D8D91E749177009871A1 /* 10000Steps WatchkitApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "10000Steps WatchkitApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +167,7 @@
 		ED4D9E3C1E98204B005A5B46 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EDE077011E85C2BB00D4A16C /* Assets.xcassets */,
 				EDE077031E85C2E500D4A16C /* CelebratingGifs */,
 				EDE077181E85C2FD00D4A16C /* WaitingGifs */,
 			);
@@ -194,7 +195,7 @@
 		ED76D8CE1E749177009871A1 /* 10000Steps WatchkitApp */ = {
 			isa = PBXGroup;
 			children = (
-				ED76D8CF1E749177009871A1 /* Interface.storyboard */,
+				ED0D20241F06DE0E00FDA92E /* Interface.storyboard */,
 				ED76D8D21E749177009871A1 /* Assets.xcassets */,
 				ED76D8D41E749177009871A1 /* Info.plist */,
 			);
@@ -281,7 +282,6 @@
 		EDE077181E85C2FD00D4A16C /* WaitingGifs */ = {
 			isa = PBXGroup;
 			children = (
-				EDE077011E85C2BB00D4A16C /* Assets.xcassets */,
 				EDE077191E85C30900D4A16C /* waiting1.gif */,
 				EDE0771A1E85C30900D4A16C /* waiting2.gif */,
 				EDE0771B1E85C30900D4A16C /* waiting3.gif */,
@@ -435,8 +435,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED0D20251F06DE0E00FDA92E /* Interface.storyboard in Resources */,
 				ED76D8D31E749177009871A1 /* Assets.xcassets in Resources */,
-				ED76D8D11E749177009871A1 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,14 +521,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ED76D8CF1E749177009871A1 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ED76D8D01E749177009871A1 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 		EDBC11A41E737B2500AEA487 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

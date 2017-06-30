@@ -1,8 +1,5 @@
 import Foundation
 
- /*Todo:
-  - Animate success label a little bit
- */
 class RunningViewController: UIViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var gifImageView: FLAnimatedImageView!

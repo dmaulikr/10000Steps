@@ -7,15 +7,17 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var headerLabel: WKInterfaceLabel!
     @IBOutlet var gifImage: WKInterfaceImage!
     @IBOutlet var numberOfStepsLabel: WKInterfaceLabel!
-    @IBOutlet var andCountingLabel: WKInterfaceLabel!
 
-    lazy var labels: [WKInterfaceLabel] = { return [ self.headerLabel, self.numberOfStepsLabel, self.andCountingLabel ] }()
+    lazy var labels: [WKInterfaceLabel] = { return [ self.headerLabel, self.numberOfStepsLabel ] }()
+
+    let healthManager:HealthManager = HealthManager()
+    let defaults = UserDefaults.standard
+    var isAuthorized = false
 
     var hasReached10000 = false
-    let steps = 10000
+    var steps = 0
     var randomIndex = 0
     let successColor = UIColor(red: 72/255, green: 129/255, blue: 141/255, alpha: 1.0)
-
 
     let waitingGifs = [
         Gif.init(name: "waiting1frame", length: 10, duration: 1),
@@ -46,16 +48,39 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 
+        isAuthorized = defaults.bool(forKey: "isAuthorized")
+        if !isAuthorized { authorize() }
+
         randomIndex = Int(arc4random_uniform(UInt32(10)))
-        setupView()
+        getStepData()
+    }
+
+    func authorize() {
+        let completion: (Bool) -> Void = { _ in
+            self.defaults.set(true, forKey: "isAuthorized")
+        }
+        healthManager.authorizeHealthKit(completion: completion)
+    }
+
+    func getStepData() {
+        healthManager.getCurrentNumberOfSteps(completion: { (steps, error) -> Void in
+            if error != nil {
+                print("Error fetching steps: \(error?.localizedDescription ?? "Didn't work")")
+                return
+            }
+
+            DispatchQueue.main.async(execute: { () -> Void in
+                self.steps = Int(steps)
+                self.hasReached10000 = steps >= 10000 ? true : false
+                self.setupView()
+            })
+        })
     }
 
     func setupView() {
         let headerText = hasReached10000  ? "YOU DID IT!" : "Try to reach 10,000"
         headerLabel.setText(headerText)
         numberOfStepsLabel.setText("\(formatNumber(of: steps)) Steps")
-        let finalText = hasReached10000 ? "and Counting!" : "Keep steppin!"
-        andCountingLabel.setText(finalText)
 
         if hasReached10000 { labels.forEach { $0.setTextColor(successColor) } }
         
@@ -82,4 +107,57 @@ struct Gif {
     let name: String
     let length: Int
     let duration: Double
+}
+
+class HealthManager {
+    var healthStore: HKHealthStore = HKHealthStore()
+    var numberOfSteps = Double()
+
+    func authorizeHealthKit(completion: @escaping (Bool) -> Void) {
+        if HKHealthStore.isHealthDataAvailable() {
+            let steps = NSSet(object: HKQuantityType.quantityType(
+                forIdentifier: HKQuantityTypeIdentifier.stepCount)!)
+
+            healthStore.requestAuthorization(toShare: nil, read: (steps as! Set<HKObjectType>)) { (success, error) -> Void in
+                if success { completion(true) } else { completion(false) }
+            }
+        } else { print("HealthKit is not available on this Device") }
+    }
+
+    func getCurrentNumberOfSteps(completion: @escaping ((Double, NSError?) -> ())) {
+        let stepsCount = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)
+
+        let date = NSDate()
+        let cal = Calendar(identifier: Calendar.Identifier.gregorian)
+        let newDate = cal.startOfDay(for: date as Date)
+
+        let predicate = HKQuery.predicateForSamples(withStart: newDate as Date, end: date as Date, options: .strictStartDate)
+        let interval: NSDateComponents = NSDateComponents()
+        interval.day = 1
+
+        let query = HKStatisticsCollectionQuery(quantityType: stepsCount!, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: newDate as Date, intervalComponents:interval as DateComponents)
+
+        query.initialResultsHandler = { query, results, error in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+                return
+            }
+
+            if let myResults = results{
+                myResults.enumerateStatistics(from: newDate as Date, to: date as Date) {
+                    statistics, stop in
+                    if let quantity = statistics.sumQuantity() {
+                        let steps = quantity.doubleValue(for: HKUnit.count())
+                        self.numberOfSteps = steps
+                        print("Steps = \(steps)")
+                        completion(self.numberOfSteps, nil)
+                    } else {
+                        self.numberOfSteps = 0
+                        completion(self.numberOfSteps, nil)
+                    }
+                }
+            }
+        }
+        healthStore.execute(query)
+    }
 }
