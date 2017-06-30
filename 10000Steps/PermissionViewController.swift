@@ -5,7 +5,7 @@ class PermissionViewController: UIViewController {
     
     @IBAction func didTapAuthorize(_ sender: Any) {
 
-        let completion: (Bool) -> Void = { result in
+        let completion: (Bool) -> Void = { _ in
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             guard let runningVC = storyBoard.instantiateViewController(withIdentifier: "RunningVC") as? RunningViewController else { return }
             runningVC.defaults.set(true, forKey: "isAuthorized")

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -15,11 +15,16 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="_0000Steps_WatchkitApp_Extension">
                     <items>
                         <label alignment="center" text="# Steps" id="wxB-LR-qPA">
+                            <color key="textColor" red="0.77647058820000003" green="0.27058823529999998" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <imageView width="155" height="100" alignment="left" contentMode="scaleAspectFit" id="GtF-gq-hPI"/>
-                        <label alignment="center" text="# Steps" id="sdr-fz-uX3"/>
-                        <label alignment="center" text="and Counting!" id="bwi-Id-yj6"/>
+                        <label alignment="center" text="# Steps" id="sdr-fz-uX3">
+                            <color key="textColor" red="0.77647058820000003" green="0.27058823529999998" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
+                        <label alignment="center" text="and Counting!" id="bwi-Id-yj6">
+                            <color key="textColor" red="0.77647058820000003" green="0.27058823529999998" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="andCountingLabel" destination="bwi-Id-yj6" id="O9Q-qL-Vel"/>

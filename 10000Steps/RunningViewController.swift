@@ -1,5 +1,8 @@
 import Foundation
 
+ /*Todo:
+  - Animate success label a little bit
+ */
 class RunningViewController: UIViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var gifImageView: FLAnimatedImageView!
@@ -9,10 +12,10 @@ class RunningViewController: UIViewController {
     let defaults = UserDefaults.standard
     var isAuthorized = Bool()
 
-    var steps = Int()
+    var steps = 0
     var hasReached10000 = false
 
-    var randomIndex = Int()
+    var randomIndex = 0
 
     let waitingImageTitles = [
         "waiting1",
@@ -71,8 +74,10 @@ class RunningViewController: UIViewController {
 
                 self.setSteps()
 
-                if self.hasReached10000 { self.setSuccessView() }
-                else { self.headerLabel.text = "Try to reach 10,000!" }
+                switch self.hasReached10000 {
+                case true: self.setSuccessView()
+                case false: self.headerLabel.text = "Try to reach 10,000!"
+                }
 
                 self.getGifImage()
             })
@@ -105,7 +110,6 @@ class RunningViewController: UIViewController {
 
     func setSuccessView() {
         headerLabel.text = "YOU DID IT!"
-        //TODO: Animate this label a little bit
 
         let color = UIColor(red: 72/255, green: 129/255, blue: 141/255, alpha: 1.0)
         headerLabel.textColor = color

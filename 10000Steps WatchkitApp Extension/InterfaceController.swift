@@ -9,9 +9,13 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var numberOfStepsLabel: WKInterfaceLabel!
     @IBOutlet var andCountingLabel: WKInterfaceLabel!
 
+    lazy var labels: [WKInterfaceLabel] = { return [ self.headerLabel, self.numberOfStepsLabel, self.andCountingLabel ] }()
+
     var hasReached10000 = false
-    let steps = String()
-    var randomIndex = Int()
+    let steps = 10000
+    var randomIndex = 0
+    let successColor = UIColor(red: 72/255, green: 129/255, blue: 141/255, alpha: 1.0)
+
 
     let waitingGifs = [
         Gif.init(name: "waiting1frame", length: 10, duration: 1),
@@ -43,39 +47,34 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
 
         randomIndex = Int(arc4random_uniform(UInt32(10)))
-        hasReached10000 ? setUpCelebratingView() : setUpWaitingView()
+        setupView()
+    }
+
+    func setupView() {
+        let headerText = hasReached10000  ? "YOU DID IT!" : "Try to reach 10,000"
+        headerLabel.setText(headerText)
+        numberOfStepsLabel.setText("\(formatNumber(of: steps)) Steps")
+        let finalText = hasReached10000 ? "and Counting!" : "Keep steppin!"
+        andCountingLabel.setText(finalText)
+
+        if hasReached10000 { labels.forEach { $0.setTextColor(successColor) } }
+        
         setGifImage()
     }
 
-    func setUpWaitingView() {
-        numberOfStepsLabel.setHidden(false)
-        andCountingLabel.setHidden(false)
+    func formatNumber(of steps: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
 
-        headerLabel.setText("Try to reach 10,000")
-        numberOfStepsLabel.setText("\(steps) Steps")
-        andCountingLabel.setText("Keep steppin!")
-    }
+        guard let formattedNumber = numberFormatter.string(from: NSNumber(value: steps)) else { return String() }
 
-    func setUpCelebratingView() {
-        numberOfStepsLabel.setHidden(false)
-        andCountingLabel.setHidden(false)
-
-        headerLabel.setText("YOU DID IT!")
-        numberOfStepsLabel.setText("\(steps) Steps")
+        return formattedNumber
     }
 
     func setGifImage() {
         let gif = hasReached10000 ? celebratingGifs[randomIndex] : waitingGifs[randomIndex]
         gifImage.setImageNamed(gif.name)
         gifImage.startAnimatingWithImages(in: NSRange(location: 0, length: gif.length), duration: gif.duration, repeatCount: Int.max)
-    }
-
-    override func willActivate() {
-        super.willActivate()
-    }
-    
-    override func didDeactivate() {
-        super.didDeactivate()
     }
 }
 
@@ -84,5 +83,3 @@ struct Gif {
     let length: Int
     let duration: Double
 }
-
-
